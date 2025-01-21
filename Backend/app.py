@@ -10,6 +10,7 @@ pets_data = [
     {"id": 3, "name": "Charlie", "species": "Dog", "age": 1, "description": "Energetic and loves running."},
 ]
 
+
 # Route for the home page
 @app.route('/')
 def index():
