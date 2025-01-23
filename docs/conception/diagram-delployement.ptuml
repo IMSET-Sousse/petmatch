@@ -1,0 +1,28 @@
+@startuml
+!define RECTANGLE class
+
+node "Client" {
+  rectangle "Web App" as webApp
+  rectangle "Mobile App" as mobileApp
+}
+
+node "Application Server" {
+  rectangle "Pet Match Service" as petMatchService
+}
+
+node "Database Server" {
+  rectangle "SQL Database" as sqlDb
+}
+
+node "External Services" {
+  rectangle "Pet Info API" as petInfoAPI
+  rectangle "User Auth API" as userAuthAPI
+}
+
+webApp --> petMatchService : Uses
+mobileApp --> petMatchService : Uses
+petMatchService --> sqlDb : Reads/Writes Data
+petMatchService --> petInfoAPI : Fetch Pet Data
+petMatchService --> userAuthAPI : Authenticate User
+
+@enduml
