@@ -1,0 +1,38 @@
+@startuml
+
+package "Pet Match" {
+    actor "User" as User
+    actor "Admin" as Admin
+    actor "Vet" as Vet
+
+    usecase "Browse Pets" as UC1
+    usecase "Create Profile" as UC2
+    usecase "Match with Pets" as UC3
+    usecase "Apply for Adoption" as UC4
+    usecase "Review Applications" as UC5
+    usecase "Verify Pet Health" as UC6
+    usecase "Approve/Reject Adoption" as UC7
+    usecase "Add New Pet" as UC8
+    usecase "Update Pet Profile" as UC9
+    usecase "Update User Profile" as UC10
+    usecase "View Adoption Status" as UC11
+    usecase "Manage Pet Health Record" as UC12
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC10
+    User --> UC11
+
+    Admin --> UC5
+    Admin --> UC7
+    Admin --> UC8
+    Admin --> UC9
+    Admin --> UC10
+
+    Vet --> UC6
+    Vet --> UC12
+}
+
+@enduml
